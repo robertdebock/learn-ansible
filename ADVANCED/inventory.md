@@ -66,19 +66,20 @@ Good to know:
 
 ## Assignment
 
-1. Create a new directory somewhere on your system, and create a new `ansible.cfg` file that refers to an `inventory` file.
-2. Write an inventory (`ini` format) with the following groups:
+Create a new directory somewhere on your system, and create a new `ansible.cfg` file that refers to an `inventory` file.
+
+Write an inventory (`ini` format) with the following groups:
 
 - `webservers`
 - `databaseservers`
 - `netherlands`
 - `switzerland`
 
-3. Add the following hosts:
+Add the following hosts:
 
 - node-1 (a Dutch webserver)
 - node-2 (a Swiss webserver)
 - node-3 (a Dutch database server)
 - node-4 (a Swiss database server)
 
-4. Make a group of groups: `europe` that contains `netherlands` and `switzerland`.
+Make a group of groups: `europe` that contains `netherlands` and `switzerland`.
