@@ -10,11 +10,13 @@ The inventory file describes the targets available.
 
 Remember that a non-executable file (a text file) is read, wher as an executable file will be executed. The executable version would be called a "dynamic inventory".
 
+A non-executable file is a simple text file, that contains the hosts and groups the hosts.
+
 ### Formats
 
 The inventory file can be written in [INI](https://en.wikipedia.org/wiki/INI_file), [YAML](https://yaml.org) and even [JSON](https://www.json.org/json-en.html).
 
-> I would advice to use the INI-format.
+> I would advice to use the INI-format as it's pretty easy to read and write.
 
 ### Locations
 
@@ -26,15 +28,21 @@ You can override the inventory by specifying the `-i` parameter:
 ansible-playbook -i /path/to/inventory my_playbook.yml
 ```
 
-I would recommend to place an `ansible.cfg`, referring to an `inventory` in the project you are working on.
+I would recommend to place an `ansible.cfg`, referring to an `inventory` in the project or repository you are working on.
 
-`ansible.cfg`:
+
+Here is an example of an inventory in the INI-format:
+
+
+### `ansible.cfg`
+
 ```ini
 [defaults]
 inventory = inventory
 ```
 
-`inventory/hosts`
+### `inventory/hosts`
+
 ```ini
 [webservers]
 node-a
@@ -60,13 +68,15 @@ databaseservers
 Good to know:
 
 - Hosts can be in multiple groups.
-- You can place variable and values in an inventory, I think [`group_vars`](group_host_vars) is a better place.
+- You can place variable and values in an inventory, I think [`host_vars` or `group_vars`](group_host_vars) is a better place.
 - You can make cross-selections. This is described in the [targeting](targeting) chapter.
 - Groups-in-groups are possible, using `:children`.
+- If `ansible.cfg` refers to an `inventory`, this `inventory` can be a file or directory.
+- You can use `-i` to override the inventory. A drawback is that these "runtime" options are not stored as code.
 
 ## Assignment
 
-Create a new directory somewhere on your system, and create a new `ansible.cfg` file that refers to an `inventory` file.
+Create a new directory somewhere on your system, and create a new file called `ansible.cfg` file that refers to an `inventory` file.
 
 Write an inventory (`ini` format) with the following groups:
 
@@ -83,3 +93,5 @@ Add the following hosts:
 - node-4 (a Swiss database server)
 
 Make a group of groups: `europe` that contains `netherlands` and `switzerland`.
+
+This assignment is required for further chapters.

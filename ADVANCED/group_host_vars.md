@@ -1,6 +1,6 @@
 # Group and host vars
 
-Ansible is a variable driven tool. Variables are used to store information, and to make decisions.
+Ansible is a variable driven tool, just as Terraform for example. Variables are used to store information, and to make decisions.
 
 Group vars and host vars are a way to store variables for a group of hosts, or a single host.
 
@@ -32,3 +32,16 @@ backup_paths:
 As you can see, you can set a value for a variable based on the group the host is in.
 
 The same works for host vars, but then for a single host. The group_vars are mostly more applicable than host_vars, but you can use both.
+
+More specific variables will override the more general ones. The different levels and priority is described in the [Ansible documentation](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#understanding-variable-precedence).
+
+## Assignment
+
+> Note: This assignment requires the [previous assignment on inventory](inventory) to be completed.
+
+1. Create a `group_vars` directory.
+2. Create a `group_vars/all/ntp.yml` file.
+3. Set the `ntp_server` variable to `0.pool.ntp.org` for all hosts.
+4. Create a `group_vars/switzerland/ntp.yml` file.
+5. Set the `ntp_server` variable to `0.ch.pool.ntp.org` for all hosts in the `switzerland` group.
+6. Set the `ntp_server` variable to `0.nl.pool.ntp.org` for all hosts in the `netherlands` group.
