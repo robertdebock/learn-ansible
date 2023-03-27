@@ -8,7 +8,7 @@ The inventory file describes the targets available.
 
 ### Text or executable?
 
-Remember that a non-executable file (a text file) is read, wher as an executable file will be executed. The executable version would be called a "dynamic inventory".
+Remember that a non-executable file (a text file) is read, where as an executable file will be executed. The executable version would be called a "dynamic inventory".
 
 A non-executable file is a simple text file, that contains the hosts and groups the hosts.
 
@@ -68,9 +68,9 @@ databaseservers
 Good to know:
 
 - Hosts can be in multiple groups.
-- You can place variable and values in an inventory, I think [`host_vars` or `group_vars`](group_host_vars) is a better place.
+- You can place variables and values in an inventory, [`host_vars` or `group_vars`](group_host_vars) would be a better place.
 - You can make cross-selections. This is described in the [targeting](targeting) chapter.
-- Groups-in-groups are possible, using `:children`.
+- Groups-in-groups are possible, using [`:children`](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#grouping-groups-parent-child-group-relationships).
 - If `ansible.cfg` refers to an `inventory`, this `inventory` can be a file or directory.
 - You can use `-i` to override the inventory. A drawback is that these "runtime" options are not stored as code.
 
@@ -78,7 +78,7 @@ Good to know:
 
 Create a new directory somewhere on your system, and create a new file in that directory called `ansible.cfg` file that refers to an `inventory` file.
 
-Write an inventory (`ini` format) with the following groups:
+Write an inventory (the solution I used will use `ini` format, you can pick a different format) with the following groups:
 
 - `webservers`
 - `databaseservers`
@@ -87,10 +87,10 @@ Write an inventory (`ini` format) with the following groups:
 
 Add the following hosts:
 
-- node-1 (a Dutch webserver)
-- node-2 (a Swiss webserver)
-- node-3 (a Dutch database server)
-- node-4 (a Swiss database server)
+- `node-1` (a Dutch webserver)
+- `node-2` (a Swiss webserver)
+- `node-3` (a Dutch database server)
+- `node-4` (a Swiss database server)
 
 Make a group of groups: `europe` that contains `netherlands` and `switzerland`.
 
@@ -152,6 +152,39 @@ Run `ansible-inventory --list`. You should see this output:
         ]
     }
 }
+```
+Run `ansible-inventory --graph`. You should see this output:
+
+```text
+@all:
+  |--@ungrouped:
+  |--@webservers:
+  |  |--node-1
+  |  |--node-2
+  |--@databaseservers:
+  |  |--node-3
+  |  |--node-4
+  |--@europe:
+  |  |--@netherlands:
+  |  |  |--node-1
+  |  |  |--node-3
+  |  |--@switzerland:
+  |  |  |--node-2
+  |  |  |--node-4@all:
+  |--@ungrouped:
+  |--@webservers:
+  |  |--node-1
+  |  |--node-2
+  |--@databaseservers:
+  |  |--node-3
+  |  |--node-4
+  |--@europe:
+  |  |--@netherlands:
+  |  |  |--node-1
+  |  |  |--node-3
+  |  |--@switzerland:
+  |  |  |--node-2
+  |  |  |--node-4
 ```
 
 ### Solution
