@@ -46,7 +46,7 @@ More specific variables will override the more general ones. The different level
 5. Set the `ntp_server` variable to `0.ch.pool.ntp.org` for all hosts in the `switzerland` group.
 6. Set the `ntp_server` variable to `0.nl.pool.ntp.org` for all hosts in the `netherlands` group.
  
- ### Verify
+### Verify
 
 Run `ansible netherlands -m debug -a "var=ntp_server"`. You should see this output:
 
