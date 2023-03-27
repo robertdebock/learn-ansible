@@ -154,4 +154,8 @@ Run `ansible-inventory --list`. You should see this output:
 }
 ```
 
-This assignment is required for further chapters.
+### Solution
+
+The solution can be found in the [solution](https://github.com/robertdebock/learn-ansible-solutions/tree/master/inventory) directory.
+
+> NOTE: This assignment is required for further chapters.

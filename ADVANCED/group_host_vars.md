@@ -69,3 +69,7 @@ node-4 | SUCCESS => {
     "ntp_server": "0.ch.pool.ntp.org"
 }
 ```
+
+### Solution
+
+The solution can be found in the [solution](https://github.com/robertdebock/learn-ansible-solutions/tree/master/group-and-host-variables) directory.
