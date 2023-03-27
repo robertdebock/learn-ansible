@@ -45,3 +45,27 @@ More specific variables will override the more general ones. The different level
 4. Create a `group_vars/switzerland/ntp.yml` file.
 5. Set the `ntp_server` variable to `0.ch.pool.ntp.org` for all hosts in the `switzerland` group.
 6. Set the `ntp_server` variable to `0.nl.pool.ntp.org` for all hosts in the `netherlands` group.
+ 
+ ### Verify
+
+Run `ansible netherlands -m debug -a "var=ntp_server"`. You should see this output:
+
+```text
+node-1 | SUCCESS => {
+    "ntp_server": "0.nl.pool.ntp.org"
+}
+node-3 | SUCCESS => {
+    "ntp_server": "0.nl.pool.ntp.org"
+}
+```
+
+Run `ansible switzerland -m debug -a "var=ntp_server"`. You should see this output:
+
+ ```text
+ node-2 | SUCCESS => {
+    "ntp_server": "0.ch.pool.ntp.org"
+}
+node-4 | SUCCESS => {
+    "ntp_server": "0.ch.pool.ntp.org"
+}
+```
