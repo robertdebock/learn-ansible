@@ -76,7 +76,7 @@ Good to know:
 
 ## Assignment
 
-Create a new directory somewhere on your system, and create a new file called `ansible.cfg` file that refers to an `inventory` file.
+Create a new directory somewhere on your system, and create a new file in that directory called `ansible.cfg` file that refers to an `inventory` file.
 
 Write an inventory (`ini` format) with the following groups:
 
@@ -93,5 +93,65 @@ Add the following hosts:
 - node-4 (a Swiss database server)
 
 Make a group of groups: `europe` that contains `netherlands` and `switzerland`.
+
+### Verify
+
+Run `ansible all --list-hosts`. You should see this output:
+
+```text
+  hosts (4):
+    node-1
+    node-2
+    node-3
+    node-4
+```
+
+Run `ansible-inventory --list`. You should see this output:
+
+```json
+{
+    "_meta": {
+        "hostvars": {}
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "webservers",
+            "databaseservers",
+            "europe"
+        ]
+    },
+    "databaseservers": {
+        "hosts": [
+            "node-3",
+            "node-4"
+        ]
+    },
+    "europe": {
+        "children": [
+            "netherlands",
+            "switzerland"
+        ]
+    },
+    "netherlands": {
+        "hosts": [
+            "node-1",
+            "node-3"
+        ]
+    },
+    "switzerland": {
+        "hosts": [
+            "node-2",
+            "node-4"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "node-1",
+            "node-2"
+        ]
+    }
+}
+```
 
 This assignment is required for further chapters.
