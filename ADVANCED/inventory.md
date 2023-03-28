@@ -8,9 +8,15 @@ The inventory file describes the targets available.
 
 ### Text or executable?
 
-Remember that a non-executable file (a text file) is read, where as an executable file will be executed. The executable version would be called a "dynamic inventory".
+Remember that a non-executable file (a text file) is simply read, where as an executable file will be executed and the output is used as an inventory. The executable version would be called a "dynamic inventory".
 
-A non-executable file is a simple text file, that contains the hosts and groups the hosts.
+A non-executable file is a text file, that contains the hosts and groups the hosts. We'll be using this type of inventory in the next chapters.
+
+A few examples of dynamic inventory scripts:
+
+- [AWS](https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html)
+- [Azure](https://docs.ansible.com/ansible/latest/collections/azure/azcollection/azure_rm_inventory.html)
+- [GCP](https://docs.ansible.com/ansible/latest/collections/google/cloud/gcp_compute_inventory.html)
 
 ### Formats
 
@@ -30,9 +36,7 @@ ansible-playbook -i /path/to/inventory my_playbook.yml
 
 I would recommend to place an `ansible.cfg`, referring to an `inventory` in the project or repository you are working on.
 
-
 Here is an example of an inventory in the INI-format:
-
 
 ### `ansible.cfg`
 
@@ -153,6 +157,7 @@ Run `ansible-inventory --list`. You should see this output:
     }
 }
 ```
+
 Run `ansible-inventory --graph`. You should see this output:
 
 ```text
