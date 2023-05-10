@@ -10,7 +10,8 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Group and host variables](group_host_vars)
 - [Targeting](targeting)
 - [Conditions](conditions)
-- Looping
+- [Looping](looping)
+- [Data structures](data-structures)
 - Registering results.
 - Error handling
 - Handlers
