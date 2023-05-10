@@ -73,3 +73,21 @@ For this task, the playbook needs to be told to `gather_facts`.
 In the `inventory`, you can set `ansible_connection=local` to emulate a remote host. This tells Ansible that the specific node can be reached locally. Normally, this is only done for `localhost`.
 
 > Note: The tasks will only run when the condition is met. (Ubuntu 18 or Ubuntu 19.) The `ansible_connection=local` setting will run the job on your machine. You can change the condition to run on your specific node.
+
+## Verify
+
+Run `ansible-playbook playbook.yml`. You should see this output:
+
+```text
+PLAY [Print something] *******************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************
+
+TASK [Print hello world] *****************************************************************************************
+ok: [node-1] => {
+    "msg": "Hello World!"
+}
+ok: [node-3] => {
+    "msg": "Hello World!"
+}
+```
