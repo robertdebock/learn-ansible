@@ -21,10 +21,10 @@ There are a couple of patterns that are interesting:
 - `all` - all hosts in the inventory.
 - `webservers` - all hosts in the `webservers` group. (Or any other group that you have defined in the [inventory](inventory).)
 - `node-1` - a single host, by name. There is actually no different in targeting a group and a single host, so pick you hostnames and groupnames carefully.
-- `node-1:node-2` - multiple hosts, by name. You can use a comma to separate multiple hosts.
+- `node-1:node-2` - multiple hosts, by name. You can use a colon (`:`) to separate multiple hosts.
 - `node-*` - multiple hosts, by name. You can use a wildcard to select multiple hosts.
 - `all:!node-1` - all hosts, except `node-1`. You can use an exclamation mark to exclude a host.
-- `webservers:&production` - all hosts in the `webservers` and `production` group. You can use an ampersand to select multiple groups.
+- `webservers:&production` - all hosts in the `webservers` and `production` group. You can use an ampersand to make a cross-selection of groups.
 
 ## Limiting
 
@@ -84,7 +84,7 @@ ansible-playbook playbook.yml --limit development
 
 Would run on node-1 only.
 
-> Note: Limiting on the command line, like above, has a disadvantage of not being expressed in code.
+> Note: Limiting on the command line, like above, has a disadvantage of not being stored in code.
 
 ## Assignment
 
