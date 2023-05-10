@@ -11,7 +11,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Targeting](targeting)
 - [Conditions](conditions)
 - [Looping](looping)
-- [Data structures](data-structures)
+- [Data structures](data_structures)
 - Registering results.
 - Error handling
 - Handlers

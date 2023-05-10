@@ -11,7 +11,7 @@ Sometimes you want to repeat a task for several items. This can be done using a 
   tasks:
     - name: Install tool
       apt:
-        name: "{{ item }}"
+        name: "{% raw %}{{ item }}{% endraw %}"
       loop:
         - tcpdump
         - screen
@@ -29,8 +29,8 @@ Sometimes you want to loop over a list of items with extra parameters:
   tasks:
     - name: Install tool
       apt:
-        name: "{{ item.name }}"
-        state: "{{ item.state }}"
+        name: "{% raw %}{{ item.name }}{% endraw %}"
+        state: "{% raw %}{{ item.state }}{% endraw %}"
       loop:
         - name: tcpdump
           state: present
@@ -49,8 +49,8 @@ You can make the above code even cooler by using a default value of `present`.
   tasks:
     - name: Install tool
       apt:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
+        name: "{% raw %}{{ item.name }}{% endraw %}"
+        state: "{% raw %}{{ item.state | default('present') }}{% endraw %}"
       loop:
         - name: tcpdump
         - name: screen
@@ -70,8 +70,8 @@ When looping over a list of dictionaries, the output can become cluttered. You c
   tasks:
     - name: Install tool
       apt:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
+        name: "{% raw %}{{ item.name }}{% endraw %}"
+        state: "{% raw %}{{ item.state | default('present') }}{% endraw %}"
       loop:
         - name: tcpdump
         - name: screen
@@ -91,14 +91,14 @@ Instead of `item`, you can also rename the variable to something else:
   tasks:
     - name: Install tool
       apt:
-        name: "{{ tool.name }}"
-        state: "{{ tool.state | default('present') }}"
+        name: "{% raw %}{{ tool.name }}{% endraw %}"
+        state: "{% raw %}{{ tool.state | default('present') }}{% endraw %}"
       loop:
         - name: tcpdump
         - name: screen
           state: absent
       loop_control:
-        label: "{{ tool.name }}"
+        label: "{% raw %}{{ tool.name }}{% endraw %}"
         loop_var: tool
 ```
 
