@@ -12,8 +12,9 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Conditions](conditions)
 - [Looping](looping)
 - [Data structures](data_structures)
-- Registering results.
+- [Registering results](registering_results)
 - Error handling
 - Handlers
+- Blocks
 - Specials (async)
 - Filters
