@@ -8,7 +8,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 
 - [Inventory](inventory)
 - [Group and host variables](group_host_vars)
-- Targeting
+- [Targeting](targeting)
 - Conditionals
 - Looping
 - Registering results.
