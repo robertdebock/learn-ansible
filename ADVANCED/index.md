@@ -9,8 +9,10 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Inventory](inventory)
 - [Group and host variables](group_host_vars)
 - [Targeting](targeting)
-- Conditionals
+- [Conditions](conditions)
 - Looping
 - Registering results.
 - Error handling
 - Handlers
+- Specials (async)
+- Filters
