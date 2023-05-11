@@ -16,7 +16,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Error handling (blocks)](error_handling)
 - [Handlers](handlers)
 - Specials
-  1. retry & until
+  1. [retry & until](retry_until)
   2. delegate_to
   3. [async](async)
   4. local_action
