@@ -20,7 +20,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
   2. retry & until
   3. delegate_to
   4. local_action
-  5. run_once
+  5. [run_once](run_once)
   6. check_mode  
   7. strategy
 - Tags
