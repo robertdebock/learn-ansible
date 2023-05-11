@@ -15,5 +15,14 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Registering results](registering_results)
 - [Error handling (blocks)](error_handling)
 - [Handlers](handlers)
-- Specials (async)
+- Specials
+  1. [async](async)
+  2. retry & until
+  3. delegate_to
+  4. local_action
+  5. run_once
+  6. check_mode  
+  7. strategy
+- Tags
 - Filters
+- Ansible Vault
