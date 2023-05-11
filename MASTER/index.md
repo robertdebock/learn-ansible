@@ -20,3 +20,4 @@ Ansible integrated into the work environment.
 - YAML merging
 - CI/CD
 - Combining with Terraform
+- [Style](style)

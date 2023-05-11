@@ -14,6 +14,6 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - [Data structures](data_structures)
 - [Registering results](registering_results)
 - [Error handling (blocks)](error_handling)
-- Handlers
+- [Handlers](handlers)
 - Specials (async)
 - Filters
