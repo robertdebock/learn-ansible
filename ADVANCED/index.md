@@ -25,7 +25,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
   7. [strategy](strategy)
   8. [serial](serial)
   9. [throttle](throttle)
-  10. order
+  10. [order](order)
 - Tags
 - Filters
 - Ansible Vault
