@@ -29,11 +29,11 @@ Let's first setup Ansible without too much Ansible code, just the inventory and 
 4. Create an `inventory` directory.
 5. Create an inventory file `hosts` in the `inventory` directory.
 6. Create a group `webservers` in the inventory file.
-7. Add 2 hosts to the `webservers` group: `infrastructure-node-1-1` and `infrastructure-node-2-1`, both using `ansible_connection=docker`.
+7. Add 2 hosts to the `webservers` group: `node-1` and `node-2`, both using `ansible_connection=docker`.
 8. Create a group `databaseservers` in the inventory file.
-9. Add 2 hosts to the `databaseservers` group: `infrastructure-node-3-1` and `infrasrtructure-node-4-1`, both using `ansible_connection=local`.
-10. Create a group `production` in the inventory file, add `infrastrucuture-node-1-1` and `infrastructure-node-3-1` to it.
-11. Create a group `development` in the inventory file, add `infrastructure-node-2-1` and `infrastructure-node-4-1` to it.
+9. Add 2 hosts to the `databaseservers` group: `node-3` and `node-4`, both using `ansible_connection=local`.
+10. Create a group `production` in the inventory file, add `node-1` and `node-3` to it.
+11. Create a group `development` in the inventory file, add `node-2` and `node-4` to it.
 12. Create a directory for the `group_vars`.
 13. Create a file `group_vars/all/ntp.yml` in the `group_vars` directory.
 14. Set the `ntp_server` variable to `0.pool.ntp.org` for all hosts.
