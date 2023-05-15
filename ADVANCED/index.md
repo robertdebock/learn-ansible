@@ -29,3 +29,5 @@ Each chapter has some explanation, and one or more assignments. The solution is 
 - Tags
 - Filters
 - Ansible Vault
+
+[Advanced assignment](advanced_assignment)
