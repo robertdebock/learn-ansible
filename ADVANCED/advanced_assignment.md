@@ -124,3 +124,36 @@ Run this Ansible command and check that nothing has changed.
 ```shell
 ansible -m lineinfile -a "path=/etc/chrony.conf line='pool 0.pool.ntp.org iburst'" all --check
 ```
+
+## Assignment 4
+
+Modify the playbook to:
+
+1. Place an `index.html` on the `webservers`.
+2. Make sure the content of `index.html` read something like this: "Hello from MY_HOST_NAME." (Where `MY_HOST_NAME` is the variable hostname of the node.)
+
+## Verification of assignment 4
+
+Run this command: `curl http://localhost:80` and make sure "Hello from node-1." is returned.
+Run this command: `curl http://localhost:81` and make sure "Hello from node-2." is returned.
+
+## Assignment 5
+
+We're going to play with error handling.
+
+Append to the playbook, a task that:
+
+- Displays a message, something like "Hello."
+- Randomly fails. You'll need to use the [`random`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/random_filter.html) filter.
+- In case the job (randomly) failed, display a message, something like "Oh no, it failed.".
+
+## Verification of assignment 5
+
+When running the playbook a few times, you should see the play summary, where  `rescued` is `1`:
+
+```text
+node-1       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=1    ignored=0   
+node-2       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+node-3       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+node-4       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=1    ignored=0    
+```
