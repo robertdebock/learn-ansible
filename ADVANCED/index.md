@@ -19,7 +19,7 @@ Each chapter has some explanation, and one or more assignments. The solution is 
   1. [retry & until](retry_until)
   2. [delegate_to](delegate_to)
   3. [async](async)
-  4. local_action
+  4. [local_action](local_action)
   5. [run_once](run_once)
   6. check_mode  
   7. [strategy](strategy)
